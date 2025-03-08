@@ -1,17 +1,19 @@
-/* Definición de la paleta de colores en variables CSS */
+/* Definición de la nueva paleta de colores en variables CSS */
 :root {
-    --color-primario: #1a1a2e;
-    /* Azul oscuro profundo */
-    --color-secundario: #0f3460;
-    /* Azul medio */
-    --color-acento: #e94560;
-    /* Rojo rosado vibrante */
-    --color-fondo: #f5f5f5;
-    /* Gris claro suave */
+    --color-primario: #1f192f;
+    /* Morado oscuro - header, footer */
+    --color-secundario: #2d6073;
+    /* Azul verdoso - títulos, detalles */
+    --color-acento: #65b8a6;
+    /* Turquesa - botones, barras de progreso */
+    --color-fondo: #f0f7da;
+    /* Crema claro - fondo principal */
     --color-texto-claro: #ffffff;
-    /* Blanco */
+    /* Blanco - texto sobre fondos oscuros */
     --color-texto-oscuro: #333333;
-    /* Gris oscuro */
+    /* Gris oscuro - texto general */
+    --color-fondo-secundario: #b5e8c3;
+    /* Verde claro - tarjetas */
 }
 
 /* Suavizar el desplazamiento */
@@ -42,7 +44,6 @@ header {
     top: 0;
     z-index: 1000;
     height: 80px;
-    /* Altura fija */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -81,9 +82,7 @@ nav ul li a:hover {
 section {
     margin-bottom: 4rem;
     padding-top: 80px;
-    /* Compensar altura del header */
     scroll-margin-top: 80px;
-    /* Ajustar anclaje */
 }
 
 h2 {
@@ -118,7 +117,7 @@ h2 {
 }
 
 .project {
-    background-color: var(--color-texto-claro);
+    background-color: var(--color-fondo-secundario);
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -161,7 +160,7 @@ h2 {
 }
 
 .skill-card {
-    background-color: var(--color-texto-claro);
+    background-color: var(--color-fondo-secundario);
     padding: 1.5rem;
     border-radius: 10px;
     text-align: center;
@@ -226,7 +225,7 @@ h2 {
 }
 
 .recommendation-card {
-    background-color: var(--color-texto-claro);
+    background-color: var(--color-fondo-secundario);
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -254,7 +253,7 @@ h2 {
 }
 
 .article-card {
-    background-color: var(--color-texto-claro);
+    background-color: var(--color-fondo-secundario);
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -280,7 +279,7 @@ h2 {
 }
 
 .article-card .read-more:hover {
-    color: #d32f4b;
+    color: #4e8c7d;
     /* Tono más oscuro del acento */
 }
 
@@ -330,7 +329,8 @@ h2 {
 }
 
 .contact-form button:hover {
-    background-color: #d32f4b;
+    background-color: #4e8c7d;
+    /* Tono más oscuro del acento */
 }
 
 .contact-info {
