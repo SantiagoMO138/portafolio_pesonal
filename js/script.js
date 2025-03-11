@@ -72,3 +72,11 @@ form.addEventListener('submit', function (e) {
         alert('Por favor, completa todos los campos.');
     }
 });
+
+// 5. Menú desplegable
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+
+menuToggle.addEventListener('click', function () {
+    menu.classList.toggle('active');
+});

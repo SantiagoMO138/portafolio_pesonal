@@ -41,6 +41,7 @@ header {
     color: var(--color-texto-claro);
     padding: 1.5rem 2rem;
     position: sticky;
+    width: 100%;
     top: 0;
     z-index: 1000;
     display: flex;
@@ -519,6 +520,96 @@ body.dark-mode {
 
 .dark-mode .modal {
     background-color: rgba(0, 0, 0, 0.9);
+}
+
+.dark-mode #theme-toggle {
+    background-color: var(--color-secundario);
+    color: var(--color-texto-claro);
+}
+
+.dark-mode #theme-toggle:hover {
+    background-color: #2e6776;
+}
+
+/* Botón del menú */
+/* Botón del menú */
+#menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--color-texto-claro);
+    cursor: pointer;
+}
+
+/* Botón de tema */
+#theme-toggle {
+    padding: 10px 20px;
+    background-color: var(--color-secundario);
+    color: var(--color-texto-claro);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#theme-toggle:hover {
+    background-color: #2e6776;
+    /* Variación del secundario */
+}
+
+/* Estilos del nav */
+#menu {
+    position: absolute;
+    top: 100%;
+    /* Debajo del header */
+    left: 0;
+    width: 100%;
+    background-color: var(--color-fondo-secundario);
+    max-height: 0;
+    /* Oculto por defecto */
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+#menu.active {
+    max-height: 50px;
+    /* Altura para el menú horizontal */
+}
+
+/* Lista horizontal */
+#menu ul {
+    display: flex;
+    justify-content: space-around;
+    /* Distribuye los elementos */
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+}
+
+#menu li {
+    margin: 0 10px;
+}
+
+#menu a {
+    text-decoration: none;
+    color: var(--color-texto-claro);
+    font-weight: 400;
+}
+
+#menu a:hover {
+    color: var(--color-acento);
+}
+
+/* Ajustes para modo oscuro */
+.dark-mode header {
+    background-color: var(--color-fondo-secundario);
+}
+
+.dark-mode #menu {
+    background-color: var(--color-fondo-secundario);
+}
+
+.dark-mode #menu-toggle {
+    color: var(--color-texto-claro);
 }
 
 .dark-mode #theme-toggle {
