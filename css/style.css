@@ -1,27 +1,26 @@
-/* Definición de la nueva paleta de colores en variables CSS */
+/* Variables CSS - Tema Oscuro Elegante */
 :root {
-    --color-primario: #1f192f;
-    /* Morado oscuro - header, footer */
-    --color-secundario: #2d6073;
-    /* Azul verdoso - títulos, detalles */
-    --color-acento: #65b8a6;
-    /* Turquesa - botones, barras de progreso */
-    --color-fondo: #f0f7da;
-    /* Crema claro - fondo principal */
-    --color-texto-claro: #ffffff;
-    /* Blanco - texto sobre fondos oscuros */
-    --color-texto-oscuro: #333333;
-    /* Gris oscuro - texto general */
-    --color-fondo-secundario: #b5e8c3;
-    /* Verde claro - tarjetas */
+    --color-primario: #e0e0e0;
+    /* Gris claro para el modo claro */
+    --color-secundario: #3a7b8c;
+    /* Mantengo el azul cian oscuro */
+    --color-acento: #00c4b4;
+    /* Mantengo el turquesa brillante */
+    --color-fondo: #f5f5f5;
+    /* Fondo gris muy claro */
+    --color-texto-claro: #333;
+    /* Texto oscuro para modo claro */
+    --color-texto-oscuro: #666;
+    /* Gris medio oscuro */
+    --color-fondo-secundario: #dcdcdc;
+    /* Fondo secundario claro */
 }
 
-/* Suavizar el desplazamiento */
+/* Suavizar desplazamiento y reset básico */
 html {
     scroll-behavior: smooth;
 }
 
-/* Reset básico y fuente global */
 * {
     margin: 0;
     padding: 0;
@@ -30,41 +29,44 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: var(--color-texto-oscuro);
+    line-height: 1.7;
+    color: var(--color-texto-claro);
     background-color: var(--color-fondo);
+    font-size: 16px;
 }
 
 /* Header */
 header {
     background-color: var(--color-primario);
     color: var(--color-texto-claro);
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
-    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 600;
+    letter-spacing: 1px;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
+    list-style: none;
 }
 
 nav ul li a {
     color: var(--color-texto-claro);
     text-decoration: none;
     font-weight: 400;
-    transition: color 0.3s;
+    font-size: 1rem;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -73,22 +75,24 @@ nav ul li a:hover {
 
 /* Container */
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 2rem;
 }
 
 /* Secciones generales */
 section {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
     padding-top: 80px;
     scroll-margin-top: 80px;
 }
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    font-weight: 500;
     color: var(--color-secundario);
+    margin-bottom: 2rem;
+    letter-spacing: 0.8px;
 }
 
 /* About */
@@ -96,177 +100,179 @@ h2 {
     display: flex;
     gap: 2rem;
     align-items: center;
+    /* Alinea verticalmente al centro */
+    justify-content: center;
+    /* Centra horizontalmente todo el contenido */
 }
 
 #about img {
-    max-width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 280px;
+    border-radius: 50%;
+    /* Hace la imagen circular */
+    border: 4px solid var(--color-acento);
+    object-fit: cover;
 }
 
 #about p {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--color-texto-oscuro);
+    max-width: 600px;
+    /* Limita el ancho del texto para mejor legibilidad */
 }
 
 /* Projects */
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .project {
     background-color: var(--color-fondo-secundario);
     padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 5px 15px rgba(0, 196, 180, 0.2);
 }
 
 .project h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
     color: var(--color-secundario);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .project p {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    font-weight: 300;
     color: var(--color-texto-oscuro);
 }
 
 /* Gallery */
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 1rem;
 }
 
 .gallery-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s;
+    width: 400px;
+    height: 225px;
+    border-radius: 12px;
+    border: 1px solid var(--color-fondo-secundario);
+    object-fit: cover;
+    transition: border-color 0.3s ease;
 }
 
 .gallery-item img:hover {
-    transform: scale(1.05);
+    border-color: var(--color-acento);
 }
 
 /* Skills */
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
 }
 
 .skill-card {
     background-color: var(--color-fondo-secundario);
     padding: 1.5rem;
-    border-radius: 10px;
+    border-radius: 12px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 196, 180, 0.2);
 }
 
 .skill-icon img {
-    width: 50px;
+    width: auto;
     height: 50px;
     margin-bottom: 1rem;
-    animation: scale-up-vertical-center 0.4s ease-in-out;
-}
-
-.skill-icon img:hover {
-    animation: scale-up-vertical-center 0.4s ease-in-out;
-}
-
-.skill-card:nth-child(1) .skill-icon img {
-    animation-delay: 0s;
-}
-
-.skill-card:nth-child(2) .skill-icon img {
-    animation-delay: 0.2s;
-}
-
-.skill-card:nth-child(3) .skill-icon img {
-    animation-delay: 0.4s;
 }
 
 .skill-card label {
-    display: block;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
     color: var(--color-secundario);
+    margin-bottom: 0.75rem;
 }
 
 .progress-bar {
-    background-color: #ddd;
-    height: 10px;
-    border-radius: 5px;
+    background-color: #33334d;
+    height: 8px;
+    border-radius: 4px;
     overflow: hidden;
-    margin-bottom: 0.5rem;
 }
 
 .progress {
     height: 100%;
     background-color: var(--color-acento);
-    transition: width 0.5s ease-in-out;
-}
-
-.skill-card span {
-    font-size: 1rem;
-    color: var(--color-texto-oscuro);
+    transition: width 0.5s ease;
 }
 
 /* Recommendations */
 .recommendations-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
 
 .recommendation-card {
     background-color: var(--color-fondo-secundario);
     padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
 }
 
 .recommendation-card .quote {
-    font-size: 1.1rem;
-    font-style: italic;
+    font-size: 1rem;
+    font-weight: 300;
     color: var(--color-texto-oscuro);
     margin-bottom: 1rem;
 }
 
 .recommendation-card .author {
-    display: block;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 0.95rem;
+    font-weight: 500;
     color: var(--color-secundario);
 }
 
 /* Articles */
 .articles-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
 
 .article-card {
     background-color: var(--color-fondo-secundario);
     padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 5px 15px rgba(0, 196, 180, 0.2);
 }
 
 .article-card .article-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
     color: var(--color-secundario);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .article-card .article-summary {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    font-weight: 300;
     color: var(--color-texto-oscuro);
     margin-bottom: 1rem;
 }
@@ -274,13 +280,13 @@ h2 {
 .article-card .read-more {
     color: var(--color-acento);
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
 }
 
 .article-card .read-more:hover {
-    color: #4e8c7d;
-    /* Tono más oscuro del acento */
+    color: #00a396;
 }
 
 /* Contact */
@@ -296,10 +302,9 @@ h2 {
 }
 
 .contact-form label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-weight: 500;
     color: var(--color-secundario);
+    margin-bottom: 0.5rem;
 }
 
 .contact-form input,
@@ -307,13 +312,22 @@ h2 {
     width: 100%;
     padding: 0.8rem;
     margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
+    border: 1px solid var(--color-fondo-secundario);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background-color: var(--color-fondo-secundario);
+    color: var(--color-texto-claro);
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-acento);
+    outline: none;
 }
 
 .contact-form textarea {
-    height: 150px;
+    height: 130px;
     resize: vertical;
 }
 
@@ -322,15 +336,15 @@ h2 {
     color: var(--color-texto-claro);
     padding: 0.8rem 2rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
-    background-color: #4e8c7d;
-    /* Tono más oscuro del acento */
+    background-color: #00a396;
 }
 
 .contact-info {
@@ -339,14 +353,16 @@ h2 {
 }
 
 .contact-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 500;
     color: var(--color-secundario);
+    margin-bottom: 1rem;
 }
 
 .contact-info p {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--color-texto-oscuro);
 }
 
 /* Footer */
@@ -354,29 +370,13 @@ footer {
     background-color: var(--color-primario);
     color: var(--color-texto-claro);
     text-align: center;
-    padding: 1rem;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    padding: 1.5rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
 }
 
 footer p {
-    font-size: 0.9rem;
-}
-
-/* Animación generada por AnimatiSS */
-.scale-up-vertical-center {
-    animation: scale-up-vertical-center 0.4s ease-in-out;
-}
-
-@keyframes scale-up-vertical-center {
-    0% {
-        transform: scaleY(.2);
-    }
-
-    100% {
-        transform: scaleY(1);
-    }
+    font-size: 0.85rem;
+    font-weight: 300;
 }
 
 /* Responsividad */
@@ -384,12 +384,11 @@ footer p {
     header {
         padding: 1rem;
         flex-direction: column;
-        height: auto;
+        text-align: center;
     }
 
     nav ul {
         flex-direction: column;
-        text-align: center;
         gap: 1rem;
         margin-top: 1rem;
     }
@@ -406,4 +405,127 @@ footer p {
     .contact-container {
         flex-direction: column;
     }
+}
+
+/* Animaciones */
+
+/* Estilos básicos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ccc;
+}
+
+/* Asegurar que las barras de progreso tengan un estilo base */
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4caf50;
+}
+
+/* Estilos para el botón de cambio de tema */
+/* Estilos del botón */
+#theme-toggle {
+    padding: 10px 20px;
+    background-color: var(--color-secundario);
+    /* Azul cian oscuro */
+    color: var(--color-texto-claro);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#theme-toggle:hover {
+    background-color: #2e6776;
+    /* Variación más oscura del secundario */
+}
+
+/* Modo oscuro: aplicar los colores base originales */
+body.dark-mode {
+    --color-primario: #0d0d1a;
+    /* Negro azulado profundo */
+    --color-secundario: #3a7b8c;
+    /* Azul cian oscuro */
+    --color-acento: #00c4b4;
+    /* Turquesa brillante */
+    --color-fondo: #1a1a2e;
+    /* Fondo gris oscuro */
+    --color-texto-claro: #e0e0e0;
+    /* Gris claro para texto */
+    --color-texto-oscuro: #b0b0b0;
+    /* Gris medio */
+    --color-fondo-secundario: #252540;
+    /* Gris oscuro secundario */
+}
+
+.dark-mode header {
+    background-color: var(--color-fondo-secundario);
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3 {
+    color: var(--color-texto-claro);
+}
+
+.dark-mode .progress-bar {
+    background-color: var(--color-texto-oscuro);
+}
+
+.dark-mode .progress {
+    background-color: var(--color-acento);
+    /* Mantengo el turquesa */
+}
+
+.dark-mode .recommendation-card,
+.dark-mode .article-card,
+.dark-mode .project {
+    background-color: var(--color-fondo-secundario);
+    color: var(--color-texto-claro);
+}
+
+.dark-mode .modal {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.dark-mode #theme-toggle {
+    background-color: var(--color-secundario);
+    color: var(--color-texto-claro);
+}
+
+.dark-mode #theme-toggle:hover {
+    background-color: #2e6776;
 }
