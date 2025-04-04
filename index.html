@@ -7,6 +7,14 @@
     <meta name="description" content="Portafolio personal de Rudy Manzaneda, estudiante de Ciencias de la Computación.">
     <meta name="keywords" content="portafolio, desarrollo software, machine learning, big data">
     <title>Portafolio Personal - Santiago. A. Murillo</title>
+    <!-- Incluir Font Awesome para los íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2Lw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Incluir Bootstrap CSS desde CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Mantener tus estilos personalizados -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -14,174 +22,284 @@
 
 <body>
     <header>
-        <h1>Santiago. A. Murillo</h1>
-        <button id="menu-toggle" aria-label="Abrir menú">☰</button>
-        <nav id="menu">
-            <ul>
-                <li><a href="#about">Sobre mí</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#gallery">Galería</a></li>
-                <li><a href="#skills">Habilidades</a></li>
-                <li><a href="#recommendations">Recomendaciones</a></li>
-                <li><a href="#articles">Artículos</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
+        <!-- Usar un Navbar de Bootstrap -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Santiago. A. Murillo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#about">Sobre mí</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Proyectos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#gallery">Galería</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills">Habilidades</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#recommendations">Recomendaciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#articles">Artículos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                    </ul>
+                    <!-- Botón para cambiar tema con ícono -->
+                    <button id="theme-toggle" class="btn btn-outline-secondary">
+                        <span id="theme-icon" class="me-1"></span>
+                        <span id="theme-text">Cambiar Tema</span>
+                    </button>
+                </div>
+            </div>
         </nav>
-        <button id="theme-toggle">Cambiar Tema</button>
     </header>
 
-    <div class="container">
-        <section id="about">
-            <div>
+    <div class="container my-5">
+        <section id="about" class="row align-items-center">
+            <div class="col-md-6">
                 <h2>Sobre mí</h2>
-                <p>Soy estudiante de Ciencias de Datos en la Universidad del Valle de Bolivia, con estudios en
-                    Ing.Mecánica</p>
-                <p>Actualmente me encuentro en el área de diseño y manufactura de piezas</p>
+                <p>Soy estudiante de Ciencias de Datos en la Universidad del Valle de Bolivia, con estudios en Ing.
+                    Mecánica.</p>
+                <p>Actualmente me encuentro en el área de diseño y manufactura de piezas.</p>
             </div>
-            <img src="image/perfil/WhatsApp Image 2025-02-04 at 9.36.16 AM.jpeg" alt="Foto de perfil de Rudy Manzaneda">
+            <div class="col-md-6 text-center" style="margin-top: 80px;">
+                <img src="image/perfil/WhatsApp Image 2025-02-04 at 9.36.16 AM.jpeg" alt="Foto Santiago Murillo"
+                    class="img-fluid rounded-circle" style="max-width: 300px;">
+            </div>
         </section>
 
-        <section id="projects">
+        <section id="projects" class="my-5">
             <h2>Proyectos</h2>
-            <div class="projects">
-                <div class="project">
-                    <h3>Diseño de impresora 3D industrial</h3>
-                    <p>Una impresora 3D capaz de manejar impresiones de gran tamaño, con un volumen de impresión de
-                        1000x1000x1000mm^3.</p>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Diseño de impresora 3D industrial</h3>
+                            <p class="card-text">Una impresora 3D capaz de manejar impresiones de gran tamaño, con un
+                                volumen de impresión de 1000x1000x1000mm^3.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="project">
-                    <h3>Sistema de Gestión para Veterinarias</h3>
-                    <p>Herramienta para registrar y buscar información de clientes, con reportes sobre cuentas activas e
-                        inactivas.</p>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Sistema de Gestión para Veterinarias</h3>
+                            <p class="card-text">Herramienta para registrar y buscar información de clientes, con
+                                reportes sobre cuentas activas e inactivas.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="project">
-                    <h3>Diseño de Moldes de Instrumentos</h3>
-                    <p>Moldes para la construcción de instrumentos de cuerda.</p>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Diseño de Moldes de Instrumentos</h3>
+                            <p class="card-text">Moldes para la construcción de instrumentos de cuerda.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="gallery" class="gallery">
+        <section id="gallery" class="my-5">
             <h2>Galería</h2>
-            <div class="gallery-container">
-                <div class="gallery-item"><img src="image/galeria/imagen_1.png" alt="Imagen 1"></div>
-                <div class="gallery-item"><img src="image/galeria/imagen_2.png" alt="Imagen 2"></div>
-                <div class="gallery-item"><img src="image/galeria/imagen_3.png" alt="Imagen 3"></div>
-                <div class="gallery-item"><img src="image/galeria/imagen_4.jpeg" alt="Imagen 4"></div>
-                <div class="gallery-item"><img src="image/galeria/imagen_5.jpeg" alt="Imagen 5"></div>
-                <div class="gallery-item"><img src="image/galeria/imagen_6.jpeg" alt="Imagen 6"></div>
+            <div class="row">
+                <div class="col-md-4 mb-4 gallery-item">
+                    <img src="image/galeria/imagen_1.png" alt="Imagen 1" class="img-fluid rounded"
+                        data-bs-toggle="modal" data-bs-target="#gallery-modal">
+                </div>
+                <div class="col-md-4 mb-4 gallery-item">
+                    <img src="image/galeria/imagen_2.png" alt="Imagen 2" class="img-fluid rounded"
+                        data-bs-toggle="modal" data-bs-target="#gallery-modal">
+                </div>
+                <div class="col-md-4 mb-4 gallery-item">
+                    <img src="image/galeria/imagen_3.png" alt="Imagen 3" class="img-fluid rounded"
+                        data-bs-toggle="modal" data-bs-target="#gallery-modal">
+                </div>
+                <div class="col-md-4 mb-4 gallery-item">
+                    <img src="image/galeria/imagen_4.jpeg" alt="Imagen 4" class="img-fluid rounded"
+                        data-bs-toggle="modal" data-bs-target="#gallery-modal">
+                </div>
+                <div class="col-md-4 mb-4 gallery-item">
+                    <img src="image/galeria/imagen_5.jpeg" alt="Imagen 5" class="img-fluid rounded"
+                        data-bs-toggle="modal" data-bs-target="#gallery-modal">
+                </div>
+                <div class="col-md-4 mb-4 gallery-item">
+                    <img src="image/galeria/imagen_6.jpeg" alt="Imagen 6" class="img-fluid rounded"
+                        data-bs-toggle="modal" data-bs-target="#gallery-modal">
+                </div>
+            </div>
+
+            <!-- Contenedor para el modal de la galería -->
+            <!-- Modal de la Galería -->
+            <div class="modal fade" id="gallery-modal" tabindex="-1" aria-labelledby="galleryModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="galleryModalLabel">Imagen Ampliada</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Cerrar"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img id="modal-image" src="" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="skills" class="skills">
+
+
+        <section id="skills" class="my-5">
             <h2>Habilidades</h2>
-            <div class="skills-container">
-                <div class="skill-card">
-                    <div class="skill-icon">
+            <div class="row">
+                <div class="col-md-4 mb-4 skill-card">
+                    <div class="skill-icon text-center">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
-                            alt="Python Icon" class="icon">
+                            alt="Python Icon" class="icon img-fluid" style="max-width: 100%;">
                     </div>
-                    <label for="python">Python</label>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 0%;" data-width="70%"></div>
+                    <label for="python" class="d-block text-center">Python</label>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" data-width="70%"
+                            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <span>70%</span>
+                    <span class="d-block text-center">70%</span>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
+                <div class="col-md-4 mb-4 skill-card">
+                    <div class="skill-icon text-center">
                         <img src="https://www.3ds.com/assets/3ds-navigation/3DS_corporate-logo_solidworks.svg"
-                            alt="SolidWorks Icon" class="icon">
+                            alt="SolidWorks Icon" class="icon img-fluid" style="max-width: 100%;">
                     </div>
-                    <label for="ml">SolidWorks</label>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 0%;" data-width="85%"></div>
+                    <label for="ml" class="d-block text-center">SolidWorks</label>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" data-width="85%"
+                            aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <span>85%</span>
+                    <span class="d-block text-center">85%</span>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
+                <div class="col-md-4 mb-4 skill-card">
+                    <div class="skill-icon text-center">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Autodesk_Logo_2021.svg/320px-Autodesk_Logo_2021.svg.png"
-                            alt="Fusion Icon" class="icon">
+                            alt="Fusion Icon" class="icon img-fluid" style="max-width: 100%;">
                     </div>
-                    <label for="bigdata">Fusion</label>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 0%;" data-width="80%"></div>
+                    <label for="bigdata" class="d-block text-center">Fusion</label>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" data-width="80%"
+                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <span>80%</span>
+                    <span class="d-block text-center">80%</span>
                 </div>
             </div>
         </section>
 
-        <section id="recommendations" class="recommendations">
+        <section id="recommendations" class="my-5">
             <h2>Recomendaciones Profesionales</h2>
-            <div class="recommendations-container">
-                <div class="recommendation-card">
-                    <p class="quote">"Excelente en la resolución de problemas complejos, siempre entrega soluciones
-                        eficientes."</p>
-                    <span class="author">Juan Pérez, Analista de Datos</span>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card recommendation-card">
+                        <div class="card-body">
+                            <p class="card-text quote">"Excelente en la resolución de problemas complejos, siempre
+                                entrega soluciones eficientes."</p>
+                            <span class="author d-block text-muted">Juan Pérez, Analista de Datos</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="recommendation-card">
-                    <p class="quote">"Un profesional comprometido y con gran capacidad técnica. Altamente recomendado."
-                    </p>
-                    <span class="author">María López, Ingeniera de Software</span>
+                <div class="col-md-6 mb-4">
+                    <div class="card recommendation-card">
+                        <div class="card-body">
+                            <p class="card-text quote">"Un profesional comprometido y con gran capacidad técnica.
+                                Altamente recomendado."</p>
+                            <span class="author d-block text-muted">María López, Ingeniera de Software</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="recommendation-card">
-                    <p class="quote">"Una persona que sabe cómo abordar proyectos de gran escala y siempre logra
-                        resultados impresionantes."</p>
-                    <span class="author">Carlos Rodríguez, Gerente de Tecnología</span>
+                <div class="col-md-6 mb-4">
+                    <div class="card recommendation-card">
+                        <div class="card-body">
+                            <p class="card-text quote">"Una persona que sabe cómo abordar proyectos de gran escala y
+                                siempre logra resultados impresionantes."</p>
+                            <span class="author d-block text-muted">Carlos Rodríguez, Gerente de Tecnología</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="recommendation-card">
-                    <p class="quote">"Es un placer trabajar con alguien tan meticuloso y apasionado por la innovación."
-                    </p>
-                    <span class="author">Laura Gómez, Consultora de Big Data</span>
+                <div class="col-md-6 mb-4">
+                    <div class="card recommendation-card">
+                        <div class="card-body">
+                            <p class="card-text quote">"Es un placer trabajar con alguien tan meticuloso y apasionado
+                                por la innovación."</p>
+                            <span class="author d-block text-muted">Laura Gómez, Consultora de Big Data</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="articles" class="articles">
+        <section id="articles" class="my-5">
             <h2>Artículos y Publicaciones</h2>
-            <div class="articles-container">
-                <div class="article-card">
-                    <h3 class="article-title">"Cómo la Inteligencia Artificial está Transformando el Sector Tecnológico"
-                    </h3>
-                    <p class="article-summary">En este artículo se analiza cómo la inteligencia artificial está
-                        impactando diversos sectores industriales.</p>
-                    <a href="#" class="read-more">Leer más</a>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card article-card">
+                        <div class="card-body">
+                            <h3 class="card-title article-title">"Cómo la Inteligencia Artificial está Transformando el
+                                Sector Tecnológico"</h3>
+                            <p class="card-text article-summary">En este artículo se analiza cómo la inteligencia
+                                artificial está impactando diversos sectores industriales.</p>
+                            <a href="#" class="btn btn-primary read-more">Leer más</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="article-card">
-                    <h3 class="article-title">"El Futuro de Big Data: Tendencias y Oportunidades en 2025"</h3>
-                    <p class="article-summary">Exploramos las tendencias emergentes en Big Data, incluyendo el
-                        crecimiento del procesamiento en tiempo real.</p>
-                    <a href="#" class="read-more">Leer más</a>
+                <div class="col-md-6 mb-4">
+                    <div class="card article-card">
+                        <div class="card-body">
+                            <h3 class="card-title article-title">"El Futuro de Big Data: Tendencias y Oportunidades en
+                                2025"</h3>
+                            <p class="card-text article-summary">Exploramos las tendencias emergentes en Big Data,
+                                incluyendo el crecimiento del procesamiento en tiempo real.</p>
+                            <a href="#" class="btn btn-primary read-more">Leer más</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="article-card">
-                    <h3 class="article-title">"Introducción a Machine Learning para Principiantes"</h3>
-                    <p class="article-summary">Una guía paso a paso para comprender los conceptos fundamentales de
-                        machine learning.</p>
-                    <a href="#" class="read-more">Leer más</a>
+                <div class="col-md-6 mb-4">
+                    <div class="card article-card">
+                        <div class="card-body">
+                            <h3 class="card-title article-title">"Introducción a Machine Learning para Principiantes"
+                            </h3>
+                            <p class="card-text article-summary">Una guía paso a paso para comprender los conceptos
+                                fundamentales de machine learning.</p>
+                            <a href="#" class="btn btn-primary read-more">Leer más</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="article-card">
-                    <h3 class="article-title">"Optimización de Modelos Predictivos en Python"</h3>
-                    <p class="article-summary">Descubre cómo mejorar la precisión de tus modelos predictivos utilizando
-                        técnicas de optimización en Python.</p>
-                    <a href="#" class="read-more">Leer más</a>
+                <div class="col-md-6 mb-4">
+                    <div class="card article-card">
+                        <div class="card-body">
+                            <h3 class="card-title article-title">"Optimización de Modelos Predictivos en Python"</h3>
+                            <p class="card-text article-summary">Descubre cómo mejorar la precisión de tus modelos
+                                predictivos utilizando técnicas de optimización en Python.</p>
+                            <a href="#" class="btn btn-primary read-more">Leer más</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <section id="contact" class="my-5">
             <h2>Contacto</h2>
-            <div class="contact-container">
-                <form action="contact.php" method="post" class="contact-form">
-                    <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">Correo Electrónico:</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="message">Mensaje:</label>
-                    <textarea id="message" name="message" required></textarea>
-                    <button type="submit">Enviar</button>
-                </form>
-                <div class="contact-info">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <form action="contact.php" method="post" class="contact-form">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico:</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensaje:</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+                <div class="col-md-6 contact-info">
                     <h3>Información de Contacto</h3>
                     <p><strong>Correo Electrónico:</strong> rudy@example.com</p>
                     <p><strong>Teléfono:</strong> +591 12345678</p>
@@ -190,19 +308,22 @@
         </section>
     </div>
 
-    <!-- Contenedor para el modal de la galería -->
-    <div id="gallery-modal" class="modal">
-        <span id="close-modal" class="close">&times;</span>
-        <img id="modal-image" class="modal-content" alt="Imagen ampliada">
-    </div>
 
-    <footer>
+    <footer class="bg-light text-center py-3">
         <p>© 2025 Santiago. A. Murillo - Todos los derechos reservados - Estudiante Univalle</p>
     </footer>
 
-    <!-- Enlace al script.js -->
+    <!-- Incluir Bootstrap JS y Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <!-- Mantener tus scripts personalizados -->
     <script src="js/script.js"></script>
     <script src="js/theme.js"></script>
+
 </body>
 
 </html>

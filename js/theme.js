@@ -1,48 +1,49 @@
-// js/theme.js
+// Función para cambiar el tema
+function toggleTheme() {
+    const isDarkMode = document.body.classList.toggle('dark-mode');
+
+    const themeIcon = document.getElementById('theme-icon');
+    const themeText = document.getElementById('theme-text');
+
+    if (isDarkMode) {
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+        themeText.textContent = 'Modo Claro';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+        themeText.textContent = 'Modo Oscuro';
+        localStorage.setItem('theme', 'light');
+    }
+}
 
 // Función para inicializar el tema
 function initializeTheme() {
-    const toggleThemeButton = document.getElementById('theme-toggle') || createThemeButton();
+    const toggleThemeButton = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const themeText = document.getElementById('theme-text');
 
-    // Verificar preferencia guardada en localStorage
-    const savedTheme = localStorage.getItem('theme');
+    if (!toggleThemeButton || !themeIcon || !themeText) return;
+
+    // Aplicar tema según localStorage o preferencia del sistema
+    const savedTheme = localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    // Establecer el estado inicial sin alternarlo
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
-        toggleThemeButton.textContent = 'Modo Claro';
-    } else if (savedTheme === 'light') {
-        document.body.classList.remove('dark-mode');
-        toggleThemeButton.textContent = 'Modo Oscuro';
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        themeText.textContent = 'Modo Claro';
     } else {
-        // Si no hay preferencia guardada, usar el tema del sistema
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.body.classList.add('dark-mode');
-            toggleThemeButton.textContent = 'Modo Claro';
-        } else {
-            toggleThemeButton.textContent = 'Modo Oscuro';
-        }
+        document.body.classList.remove('dark-mode');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        themeText.textContent = 'Modo Oscuro';
     }
 
-    // Evento para cambiar el tema
-    toggleThemeButton.addEventListener('click', function () {
-        document.body.classList.toggle('dark-mode');
-        if (document.body.classList.contains('dark-mode')) {
-            toggleThemeButton.textContent = 'Modo Claro';
-            localStorage.setItem('theme', 'dark');
-        } else {
-            toggleThemeButton.textContent = 'Modo Oscuro';
-            localStorage.setItem('theme', 'light');
-        }
-    });
+    // Evento para cambiar tema al hacer clic
+    toggleThemeButton.addEventListener('click', toggleTheme);
 }
 
-// Función para crear el botón si no existe en el HTML
-function createThemeButton() {
-    const button = document.createElement('button');
-    button.id = 'theme-toggle';
-    button.textContent = 'Cambiar Tema';
-    document.body.appendChild(button);
-    return button;
-}
-
-// Inicializar el tema al cargar la página
+// Ejecutar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', initializeTheme);
